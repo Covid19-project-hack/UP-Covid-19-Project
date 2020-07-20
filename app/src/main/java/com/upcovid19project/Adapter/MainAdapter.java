@@ -12,10 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.upcovid19project.HealthCareActivity;
 import com.upcovid19project.MedicalStoresActivity;
 import com.upcovid19project.OrphanageSupport.FreeFoodActivity;
-import com.upcovid19project.TollNumbersActivity;
 import com.bumptech.glide.Glide;
 
 import com.upcovid19project.CoronaActivity;
@@ -91,91 +89,80 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ImageViewHolde
                                 break;
 
                             case 2:
-                                Intent tollnumbersintent = new Intent(mContext, TollNumbersActivity.class);
-                                tollnumbersintent.putExtra("url", jsons.getToll_numbers());
-                                mContext.startActivity(tollnumbersintent);
-                                break;
-
-                            case 3:
                                 Intent myhealthstatusintent = new Intent(mContext, MyHealthStatusActivity.class);
                                 mContext.startActivity(myhealthstatusintent);
                                 break;
 
-                            case 4:
-                                Intent healthcareintent = new Intent(mContext, HealthCareActivity.class);
+                            case 3:
+                                Intent healthcareintent = new Intent(Intent.ACTION_VIEW);
+                                healthcareintent.setData(Uri.parse(jsons.getHealth_cares()));
                                 mContext.startActivity(healthcareintent);
                                 break;
 
-                            case 5:
+                            case 4:
                                 Intent medicalstoresintent = new Intent(mContext, MedicalStoresActivity.class);
                                 mContext.startActivity(medicalstoresintent);
                                 break;
-                            case 6:
+                            case 5:
                                 Intent onlinedoctorintent = new Intent(mContext, OnlineDoctorsActivity.class);
                                 mContext.startActivity(onlinedoctorintent);
                                 break;
-                            case 7:
+                            case 6:
                                 Intent hospitaladmissionintent = new Intent(mContext, HospitalAdmissionActivity.class);
                                 mContext.startActivity(hospitaladmissionintent);
                                 break;
 
-                            case 8:
+                            case 7:
                                 Intent volunteersintent = new Intent(mContext, VolunteersActivity.class);
                                 mContext.startActivity(volunteersintent);
                                 break;
-                            case 9:
+                            case 8:
                                 Intent freefoodintent = new Intent(mContext, FreeFoodActivity.class);
                                 mContext.startActivity(freefoodintent);
                                 break;
 
-                            case 10:
+                            case 9:
                                 Intent testlabsintent = new Intent(mContext, TestLabsActivity.class);
                                 testlabsintent.putExtra("url", jsons.getLab_test());
                                 mContext.startActivity(testlabsintent);
                                 break;
 
-                            case 11:
+                            case 10:
                                 Intent orphanagesupportintent = new Intent(mContext, OrphanageSupportActivity.class);
                                 mContext.startActivity(orphanagesupportintent);
                                 break;
 
-                            case 12:
+                            case 11:
                                 Intent epassintent = new Intent(Intent.ACTION_VIEW);
                                 epassintent.setData(Uri.parse(jsons.getEpass()));
                                 mContext.startActivity(epassintent);
                                 break;
 
-                            case 13:
+                            case 12:
                                 Intent donateintent = new Intent(Intent.ACTION_VIEW);
                                 donateintent.setData(Uri.parse(jsons.getDonate()));
                                 mContext.startActivity(donateintent);
                                 break;
 
-                            case 14:
+                            case 13:
                                 Intent migrantintent = new Intent(Intent.ACTION_VIEW);
                                 migrantintent.setData(Uri.parse(jsons.getMigrant()));
                                 mContext.startActivity(migrantintent);
                                 break;
 
-                            case 15:
+                            case 14:
                                 Intent educationintent = new Intent(mContext, OnlineEducationActivity.class);
                                 educationintent.putExtra("cbse",jsons.getCbse());
                                 educationintent.putExtra("vc",jsons.getVocational_education());
                                 mContext.startActivity(educationintent);
                                 break;
 
-                            case 16:
-                                Intent intent20 = new Intent(Intent.ACTION_VIEW);
-                                intent20.setData(Uri.parse(jsons.getGo()));
-                                mContext.startActivity(intent20);
-                                break;
-
-                            case 17:
+                            case 15:
                                 Intent tweetintent = new Intent(mContext, TweetsActivity.class);
                                 tweetintent.putExtra("url", jsons.getTweets());
                                 mContext.startActivity(tweetintent);
                                 break;
-                            case 18:
+                            case 16:
                                 Intent faqintent = new Intent(mContext, FAQsActivity.class);
                                 faqintent.putExtra("url", jsons.getFaq());
                                 mContext.startActivity(faqintent);

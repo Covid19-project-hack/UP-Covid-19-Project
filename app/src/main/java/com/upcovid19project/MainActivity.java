@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     String[] web = {
             "Corona Status",
             "Home Treatment",
-            "Toll Numbers",
             "My Health Status",
             "Health Cares",
             "Medical stores",
@@ -71,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             "Donate Funds",
             "Migrant People",
             "Online Education",
-            "Government Orders",
             "Tweets",
             "FAQs"
 
@@ -79,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
     int[] imageId = {
             R.drawable.corona,
             R.drawable.home,
-            R.drawable.toll_numbers,
             R.drawable.health,
             R.drawable.healthcare,
             R.drawable.medical_store,
@@ -93,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.donate,
             R.drawable.migrant,
             R.drawable.education,
-            R.drawable.governmentorder,
             R.drawable.tweet,
             R.drawable.faq
 
@@ -224,14 +220,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject jsonObject = response.getJSONObject("MZ").getJSONObject("total");
+                            JSONObject jsonObject = response.getJSONObject("UP").getJSONObject("total");
                             String confirmed = jsonObject.getString("confirmed");
-//                            String deceased = jsonObject.getString("deceased");
+                            String deceased = jsonObject.getString("deceased");
                             String tested = jsonObject.getString("tested");
                             String recovered = jsonObject.getString("recovered");
 
                             Confirmed.setText(confirmed);
-//                            Deceased.setText(deceased);
+                            Deceased.setText(deceased);
                             Tested.setText(tested);
                             Recovered.setText(recovered);
 
